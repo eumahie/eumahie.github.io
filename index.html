@@ -6,11 +6,11 @@
 <title>ماهگردمون مبارک</title>
 <style>
   :root{
+    --p0-a:#1c0c14; --p0-b:#5a1f36; --p0-c:#c9758a;
     --p1-a:#3d1a22; --p1-b:#8a3b32; --p1-c:#d98a55;
     --p2-a:#141c26; --p2-b:#2f4256; --p2-c:#6f8ba3;
     --p3-a:#241a2e; --p3-b:#5b3f68; --p3-c:#a97fa8;
     --p4-a:#210a0f; --p4-b:#6e1b26; --p4-c:#c68a3e;
-    --p5-a:#2c2018; --p5-b:#efe2ce;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -35,11 +35,11 @@
     text-align:center;
     overflow:hidden;
   }
+  .page0{background:radial-gradient(120% 100% at 50% 15%, var(--p0-c), var(--p0-b) 55%, var(--p0-a) 100%);}
   .page1{background:radial-gradient(120% 100% at 50% 15%, var(--p1-c), var(--p1-b) 55%, var(--p1-a) 100%);}
   .page2{background:radial-gradient(120% 100% at 50% 15%, var(--p2-c), var(--p2-b) 55%, var(--p2-a) 100%);}
   .page3{background:radial-gradient(120% 100% at 50% 15%, var(--p3-c), var(--p3-b) 55%, var(--p3-a) 100%);}
   .page4{background:radial-gradient(120% 100% at 50% 15%, var(--p4-c), var(--p4-b) 55%, var(--p4-a) 100%);}
-  .page5{background:var(--p5-b); color:var(--p5-a);}
 
   .glow{
     position:absolute; inset:0; pointer-events:none;
@@ -56,6 +56,11 @@
     max-width:14ch;
     margin-bottom:10px;
     text-shadow:0 4px 30px rgba(0,0,0,.35);
+  }
+  h1.hero{
+    font-size:clamp(44px,9vw,92px);
+    line-height:1.3;
+    text-shadow:0 6px 40px rgba(0,0,0,.4);
   }
   .song-name{
     font-size:clamp(16px,2vw,20px);
@@ -76,13 +81,6 @@
     border-radius:18px;
     padding:14px;
     width:min(92vw,320px);
-  }
-  .player-card iframe{
-    width:100%;
-    height:170px;
-    border:none;
-    border-radius:10px;
-    display:block;
   }
   audio{
     width:100%;
@@ -118,24 +116,6 @@
   }
   .dots a.on{background:#fff;}
 
-  .letter-box{
-    max-width:60ch;
-    width:92vw;
-    max-height:66vh;
-    overflow-y:auto;
-    padding:6vh 5vw;
-    background:rgba(255,255,255,.35);
-    border:1px solid rgba(60,40,20,.15);
-    border-radius:20px;
-    text-align:right;
-  }
-  .letter-box p{
-    font-size:clamp(16px,2vw,19px);
-    line-height:2.1;
-    margin-bottom:1em;
-  }
-  .letter-box .placeholder{opacity:.55; font-weight:500;}
-
   @media (prefers-reduced-motion:reduce){
     .scrollhint{animation:none;}
     html{scroll-behavior:auto;}
@@ -145,47 +125,52 @@
 <body>
 
 <nav class="dots" aria-hidden="true">
-  <a href="#s1" class="on"></a>
+  <a href="#s0" class="on"></a>
+  <a href="#s1"></a>
   <a href="#s2"></a>
   <a href="#s3"></a>
   <a href="#s4"></a>
-  <a href="#s5"></a>
 </nav>
 
-<!-- صفحه ۱ -->
+<!-- صفحه اول: ماهگرد -->
+<section class="page0" id="s0">
+  <div class="glow"></div>
+  <h1 class="hero">ماهگردمون مبارک 🤍</h1>
+  <div class="scrollhint"><span></span>بکش پایین</div>
+</section>
+
+<!-- آهنگ ۱ -->
 <section class="page1" id="s1">
   <div class="glow"></div>
-  <div class="kicker">ماهگردمون مبارک</div>
   <h1 class="title">همیشه وقتی دلم برات تنگ میشه،<br>به این آهنگ گوش میدم</h1>
   <p class="letter-text">شاید کمتر کنه، اما بدتر میشه دلتنگیم…</p>
   <div class="player-card">
     <div class="song-name">Lana Del Rey — Summertime Sadness</div>
-    <iframe src="https://www.youtube.com/embed?listType=search&list=Lana+Del+Rey+Summertime+Sadness&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <audio controls preload="metadata" src="Summertime_Sadness___Lana_Del_Rey.mp3"></audio>
   </div>
-  <div class="scrollhint"><span></span>بکش پایین</div>
 </section>
 
-<!-- صفحه ۲ -->
+<!-- آهنگ ۲ -->
 <section class="page2" id="s2">
   <div class="glow"></div>
   <p class="letter-text" style="max-width:34ch; font-size:clamp(18px,2.4vw,24px);">این آهنگ وقتی پخش شد، اون قدیما، بهم حس خاکستری می‌داد، اما وجود تو الان برام رنگیش کرده؛ وقتی گوش میدم بهش، یاد تو می‌افتم…</p>
   <div class="player-card">
     <div class="song-name">Ghostly Kisses — The City Holds My Heart</div>
-    <iframe src="https://www.youtube.com/embed?listType=search&list=Ghostly+Kisses+The+City+Holds+My+Heart&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <audio controls preload="metadata" src="The_City_Holds_My_Heart___Ghostly_Kisses.mp3"></audio>
   </div>
 </section>
 
-<!-- صفحه ۳ -->
+<!-- آهنگ ۳ -->
 <section class="page3" id="s3">
   <div class="glow"></div>
   <p class="letter-text" style="max-width:34ch; font-size:clamp(18px,2.4vw,24px);">افکارم وقتی کنارتم رو این آهنگ خیلی خوب بیان می‌کنه؛ کنار تو بودن برام خیلی… آه، اسمی نمی‌تونم براش بذارم، اما نزدیک‌ترین چیزی که می‌تونه توصیفش کنه، اسم همین آهنگه…</p>
   <div class="player-card">
     <div class="song-name">Cigarettes After Sex — Heavenly</div>
-    <iframe src="https://www.youtube.com/embed?listType=search&list=Cigarettes+After+Sex+Heavenly&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <audio controls preload="metadata" src="01_Cigarettes_After_Sex_-_Heavenly.mp3"></audio>
   </div>
 </section>
 
-<!-- صفحه ۴ -->
+<!-- آهنگ ۴ -->
 <section class="page4" id="s4">
   <div class="glow"></div>
   <div class="kicker">آخرین آهنگ</div>
@@ -193,13 +178,6 @@
   <div class="player-card">
     <div class="song-name">فقط برای تو 🤍</div>
     <audio controls preload="metadata" src="you.mp3"></audio>
-  </div>
-</section>
-
-<!-- صفحه ۵ — نامه -->
-<section class="page5" id="s5">
-  <div class="letter-box">
-    <p class="placeholder">اینجا جای نامه‌ته. هر وقت متنش رو نوشتی، به‌جای همین پاراگراف بذار.</p>
   </div>
 </section>
 
